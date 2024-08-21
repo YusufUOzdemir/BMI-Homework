@@ -33,8 +33,10 @@ def bc():
             result_text+="You are overweight"
         elif bmi>=30:
             result_text+="You are obese"
-            result_label.config(text=result_text)
+        result_label.config(text=result_text)
+        except_label.pack_forget()
     except ValueError:
+        result_label.config(text="")
         except_label.pack()
 result_label.pack()
 calculate_button=tkinter.Button(text="Calculate your BMI",command=bc)
